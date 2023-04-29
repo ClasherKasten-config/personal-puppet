@@ -18,4 +18,8 @@ class packages::python {
     ensure  => 'latest',
     require => Exec['apt_update'],
   }
+  package { ['python3.7-tk',  'python3.8-tk', 'python3.9-tk', 'python3.11-tk', 'python3.12-tk']:
+    ensure  => 'latest',
+    require => Exec['apt_update']
+  }
 }

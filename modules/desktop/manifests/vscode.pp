@@ -1,4 +1,9 @@
 class desktop::vscode(String $url, String $sha256) {
+  file { '/home/clasherkasten/opt/vscode':
+    ensure => 'directory',
+    owner  => 'clasherkasten',
+    group  => 'clasherkasten',
+  } ->
   archive { "/tmp/vscode.tar.gz":
     ensure        => 'present',
     source        => $url,

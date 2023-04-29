@@ -9,7 +9,10 @@ class desktop::dotfiles {
     'python/git-github-fork', 'python/git-github-url',
     'python/inotify-exec', 'python/prune-remote-branches',
   ]
-
+  package { 'fonts-powerline':
+    ensure  => 'latest',
+    require => Exec['apt_update'],
+  }
   vcsrepo { '/home/clasherkasten/.oh-my-bash':
     ensure   => 'present',
     user     => 'clasherkasten',

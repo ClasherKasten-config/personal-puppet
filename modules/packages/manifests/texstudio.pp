@@ -1,5 +1,5 @@
 class packages::texstudio {
-  package { 'textstudio':
+  package { 'texstudio':
     ensure => 'latest',
     require => Exec['apt_update'],
   }

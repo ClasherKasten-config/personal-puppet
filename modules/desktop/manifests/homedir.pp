@@ -5,6 +5,7 @@ class desktop::homedir {
     '/home/clasherkasten/Public',
     '/home/clasherkasten/Templates',
     '/home/clasherkasten/Videos',
+    '/home/clasherkasten/Music',
     '/home/clasherkasten/snap',
   ]:
     ensure  => 'absent',
