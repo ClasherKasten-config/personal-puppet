@@ -1,20 +1,20 @@
 class desktop::homedir {
   file { [
-    '/home/asottile/Documents',
-    '/home/asottile/Pictures',
-    '/home/asottile/Public',
-    '/home/asottile/Templates',
-    '/home/asottile/Videos',
-    '/home/asottile/snap',
+    '/home/clasherkasten/Documents',
+    '/home/clasherkasten/Pictures',
+    '/home/clasherkasten/Public',
+    '/home/clasherkasten/Templates',
+    '/home/clasherkasten/Videos',
+    '/home/clasherkasten/snap',
   ]:
     ensure  => 'absent',
     recurse => true,
     force   => true,
   }
 
-  file { ['/home/asottile/bin', '/home/asottile/opt']:
+  file { ['/home/clasherkasten/bin', '/home/clasherkasten/opt']:
     ensure => 'directory',
-    owner  => 'asottile',
-    group  => 'asottile',
+    owner  => 'clasherkasten',
+    group  => 'clasherkasten',
   }
 }

@@ -1,13 +1,13 @@
 class desktop::background {
-  $bg = 'file:///usr/share/backgrounds/Twilight_Frost_by_Phil_Jackson.jpg'
+  $bg = 'file:///home/clasherkasten/.scratch/assets/dogdj.png'
 
-  package { 'ubuntu-wallpapers-precise': ensure => 'present' } ->
   gsetting { 'org.gnome.desktop.background picture-uri':
-    ensure => $bg,
-    user   => 'asottile',
+    ensure  => $bg,
+    user    => 'clasherkasten',
+    require => Vcsrepo['/home/clasherkasten/.scratch'],
   } ->
   gsetting { 'org.gnome.desktop.screensaver picture-uri':
     ensure => $bg,
-    user   => 'asottile',
+    user   => 'clasherkasten',
   }
 }

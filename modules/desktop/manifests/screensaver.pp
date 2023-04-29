@@ -1,14 +1,14 @@
 class desktop::screensaver {
   gsetting { 'org.gnome.desktop.session idle-delay':
-    ensure => 0,
-    user   => 'asottile',
+    ensure => 300,
+    user   => 'clasherkasten',
   }
   gsetting { 'org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type':
-    ensure => 'nothing',
-    user   => 'asottile',
+    ensure => 'suspend',
+    user   => 'clasherkasten',
   }
   gsetting { 'org.gnome.desktop.screensaver lock-enabled':
     ensure => ':false',
-    user   => 'asottile',
+    user   => 'clasherkasten',
   }
 }

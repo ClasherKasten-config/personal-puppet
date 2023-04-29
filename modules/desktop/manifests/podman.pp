@@ -1,9 +1,9 @@
 class desktop::podman {
-  file { '/home/asottile/bin/docker':
+  file { '/home/clasherkasten/bin/docker':
     ensure  => 'link',
     target  => '/usr/bin/podman',
-    owner   => 'asottile',
-    group   => 'asottile',
-    require => [Package['podman'], File['/home/asottile/bin']],
+    owner   => 'clasherkasten',
+    group   => 'clasherkasten',
+    require => [Package['podman'], File['/home/clasherkasten/bin']],
   }
 }

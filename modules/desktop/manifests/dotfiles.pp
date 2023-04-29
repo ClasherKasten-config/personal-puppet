@@ -10,41 +10,47 @@ class desktop::dotfiles {
     'python/inotify-exec', 'python/prune-remote-branches',
   ]
 
-  vcsrepo { '/home/asottile/workspace/scratch':
+  vcsrepo { '/home/clasherkasten/.oh-my-bash':
     ensure   => 'present',
-    user     => 'asottile',
+    user     => 'clasherkasten',
     provider => 'git',
-    source   => 'git@github.com:asottile/scratch',
+    source   => 'git@github.com:ClasherKasten-config/oh-my-bash',
+  } ->
+  vcsrepo { '/home/clasherkasten/.scratch':
+    ensure   => 'present',
+    user     => 'clasherkasten',
+    provider => 'git',
+    source   => 'git@github.com:ClasherKasten-config/scratch',
   }
 
   $dotfiles.each |$f| {
-    file { "/home/asottile/${f}":
+    file { "/home/clasherkasten/${f}":
       ensure  => 'link',
-      target  => "/home/asottile/workspace/scratch/${f}",
-      owner   => 'asottile',
-      group   => 'asottile',
-      require => Vcsrepo['/home/asottile/workspace/scratch'],
+      target  => "/home/clasherkasten/.scratch/${f}",
+      owner   => 'clasherkasten',
+      group   => 'clasherkasten',
+      require => Vcsrepo['/home/clasherkasten/.scratch'],
     }
   }
 
   $binfiles.each |$f| {
-    file { "/home/asottile/bin/${basename($f)}":
+    file { "/home/clasherkasten/bin/${basename($f)}":
       ensure  => 'link',
-      target  => "/home/asottile/workspace/scratch/${f}",
-      owner   => 'asottile',
-      group   => 'asottile',
+      target  => "/home/clasherkasten/.scratch/${f}",
+      owner   => 'clasherkasten',
+      group   => 'clasherkasten',
       require => [
-        Vcsrepo['/home/asottile/workspace/scratch'],
-        File['/home/asottile/bin'],
+        Vcsrepo['/home/clasherkasten/.scratch'],
+        File['/home/clasherkasten/bin'],
       ],
     }
   }
 
   # many scripts use this, though we can't set contents quite yet
-  file { '/home/asottile/.github-auth.json':
+  file { '/home/clasherkasten/.github-auth.json':
     ensure => 'present',
-    owner  => 'asottile',
-    group  => 'asottile',
+    owner  => 'clasherkasten',
+    group  => 'clasherkasten',
     mode   => '0600',
   }
 }

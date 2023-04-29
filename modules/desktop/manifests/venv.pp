@@ -1,15 +1,15 @@
 class desktop::venv {
   $packages = [
-    'aactivator', 'awshelp', 'babi', 'flake8', 'pre-commit', 'tox', 'twine',
-    'virtualenv',
+    'aactivator', 'babi', 'flake8', 'pre-commit', 'tox', 'twine',
+    'virtualenv', 'rustenv', 'rubyvenv', 'podman-compose'
   ]
-  $venv = '/home/asottile/opt/venv'
+  $venv = '/home/clasherkasten/opt/venv'
 
   util::virtualenv { $venv: venv => $venv }
 
   # TODO: this is quite slow, ideally I'd like something like
-  # venv { '/home/asottile/opt/venv':
-  #     user => 'asottile',
+  # venv { '/home/clasherkasten/opt/venv':
+  #     user => 'clasherkasten',
   #     packages => $packages,
   # }
   $packages.each |$pkg| {
@@ -21,36 +21,16 @@ class desktop::venv {
   }
 
   $packages.each |$bin| {
-    file { "/home/asottile/bin/${bin}":
+    file { "/home/clasherkasten/bin/${bin}":
       ensure  => 'link',
       target  => "${venv}/bin/${bin}",
-      owner   => 'asottile',
-      group   => 'asottile',
+      owner   => 'clasherkasten',
+      group   => 'clasherkasten',
       require => [
-        File['/home/asottile/bin'],
+        File['/home/clasherkasten/bin'],
         Util::Pip["${venv}(${bin})"],
       ],
     }
   }
 
-  # awscli deps conflict a lot so put them in their own environment
-  $venv_aws = '/home/asottile/opt/awscli'
-  util::virtualenv { $venv_aws: venv => $venv_aws } ->
-  util::pip { "${venv_aws}(awscli)": pkg => 'awscli', venv => $venv_aws} ->
-  file { '/home/asottile/bin/aws':
-    ensure  => 'link',
-    target  => "${venv_aws}/bin/aws",
-    owner   => 'asottile',
-    group   => 'asottile',
-    require => [
-      File['/home/asottile/bin'],
-      Util::Pip["${venv_aws}(awscli)"],
-    ],
-  }
-
-  file { ['/home/asottile/bin/az', '/home/asottile/opt/azcli']:
-    ensure  => 'absent',
-    recurse => true,
-    force   => true,
-  }
 }
