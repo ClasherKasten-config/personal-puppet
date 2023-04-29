@@ -7,7 +7,7 @@ class desktop::workspace {
   }
 
   $repos = [
-    'clasherkasten/all-repos', 'clasherkasten/babi', 'clasherkasten/pyupgrade',
+    'asottile/all-repos', 'clasherkasten/babi', 'asottile/pyupgrade',
     'pre-commit/pre-commit', 'pre-commit/pre-commit-hooks',
   ]
 

@@ -1,6 +1,7 @@
 class desktop {
   include desktop::background
   include desktop::dotfiles
+  include desktop::drawio
   include desktop::homedir
   include desktop::launcher
   include desktop::node
