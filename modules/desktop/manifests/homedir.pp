@@ -1,6 +1,5 @@
 class desktop::homedir {
   file { [
-    '/home/clasherkasten/Documents',
     '/home/clasherkasten/Pictures',
     '/home/clasherkasten/Public',
     '/home/clasherkasten/Templates',

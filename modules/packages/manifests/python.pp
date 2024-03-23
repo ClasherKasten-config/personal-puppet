@@ -7,18 +7,18 @@ class packages::python {
   }
 
   $deadsnakes_pkgs = [
-    'python3.7-dev', 'python3.7-distutils',
     'python3.8-dev', 'python3.8-distutils',
     'python3.9-dev', 'python3.9-distutils',
     'python3.11-dev',
     'python3.12-dev',
+    'python3.13-dev',
   ]
   apt::ppa { 'ppa:deadsnakes/ppa': } ->
   package { $deadsnakes_pkgs:
     ensure  => 'latest',
     require => Exec['apt_update'],
   }
-  package { ['python3.7-tk',  'python3.8-tk', 'python3.9-tk', 'python3.11-tk', 'python3.12-tk']:
+  package { ['python3.8-tk', 'python3.9-tk', 'python3.11-tk', 'python3.12-tk', 'python3.13-tk']:
     ensure  => 'latest',
     require => Exec['apt_update']
   }

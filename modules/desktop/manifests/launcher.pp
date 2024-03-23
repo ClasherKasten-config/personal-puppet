@@ -1,12 +1,14 @@
+# find settings and know what i have updated...
+
 class desktop::launcher {
   gsetting { 'org.gnome.shell favorite-apps':
-    ensure  => [
+    ensure => [
       'org.gnome.Nautilus.desktop',
       'org.gnome.Terminal.desktop',
       'firefox.desktop',
       'gnome-control-center.desktop',
     ],
-    user    => 'clasherkasten',
+    user   => 'clasherkasten',
   }
   gsetting { 'org.gnome.shell.extensions.dash-to-dock multi-monitor':
     ensure => ':true',
@@ -20,6 +22,17 @@ class desktop::launcher {
     ensure => ':false',
     user   => 'clasherkasten',
   }
+
+  gsetting { 'org.gnome.shell.extensions.dash-to-dock show-trash':
+    enusre => ':false',
+    user   => 'clasherkasten',
+  }
+
+  gsetting { 'org.gnome.shell.extensions.dash-to-dock autohide':
+    enusre => ':true',
+    user   => 'clasherkasten',
+  }
+
   gsetting { 'org.gnome.shell.extensions.ding show-home':
     ensure => ':false',
     user   => 'clasherkasten',

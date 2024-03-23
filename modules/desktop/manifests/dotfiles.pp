@@ -1,3 +1,6 @@
+# which dotfiles did i update over the time??
+# definitely bashrc! (removed oh-my-bash)
+
 class desktop::dotfiles {
   $dotfiles = [
     '.bashrc', '.bash_aliases', '.gitconfig', '.hgrc', '.nanorc', '.pdbrc',
@@ -13,12 +16,6 @@ class desktop::dotfiles {
     ensure  => 'latest',
     require => Exec['apt_update'],
   }
-  vcsrepo { '/home/clasherkasten/.oh-my-bash':
-    ensure   => 'present',
-    user     => 'clasherkasten',
-    provider => 'git',
-    source   => 'git@github.com:ClasherKasten-config/oh-my-bash',
-  } ->
   vcsrepo { '/home/clasherkasten/.scratch':
     ensure   => 'present',
     user     => 'clasherkasten',

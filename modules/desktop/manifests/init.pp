@@ -1,7 +1,9 @@
 class desktop {
   include desktop::background
+  include desktop::discord
   include desktop::dotfiles
   include desktop::drawio
+  include desktop::chrome
   include desktop::homedir
   include desktop::launcher
   include desktop::node
@@ -10,6 +12,7 @@ class desktop {
   include desktop::purged
   include desktop::pypy
   include desktop::screensaver
+  include desktop::telegram
   include desktop::venv
   include desktop::vscode
   include desktop::wayland

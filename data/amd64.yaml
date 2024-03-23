@@ -1,19 +1,33 @@
 # https://nodejs.org/dist
-desktop::node::node: 'v18.16.0'
-desktop::node::archive_name: 'node-v18.16.0-linux-x64'
-desktop::node::sha256: '44d93d9b4627fe5ae343012d855491d62c7381b236c347f7666a7ad070f26548'
+desktop::node::node: 'v18.19.0'
+desktop::node::archive_name: 'node-v18.19.0-linux-x64'
+desktop::node::sha256: '61632bb78ee828d6e8f42adc0bc2238a6b8200007093988d3927176a372281e8'
 
 # https://pypy.org/download.html
-desktop::pypy::pypy3: 'pypy3.9-v7.3.11-linux64'
-desktop::pypy::sha256: 'd506172ca11071274175d74e9c581c3166432d0179b036470e3b9e8d20eae581'
+desktop::pypy::pypy3: 'pypy3.10-v7.3.15-linux64'
+desktop::pypy::sha256: '6c577993160b6f5ee8cab73cd1a807affcefafe2f7441c87bd926c10505e8731'
 
-desktop::openjdk::openjdk: '20.0.1'
-desktop::openjdk::url: 'https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a4b/9/GPL/openjdk-20.0.1_linux-x64_bin.tar.gz'
-desktop::openjdk::sha256: '4248a3af4602dbe2aefdb7010bc9086bf34a4155888e837649c90ff6d8e8cef9'
+desktop::openjdk::openjdk: '17.0.2'
+desktop::openjdk::url: 'https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'
+desktop::openjdk::sha256: '0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'
 
-desktop::vscode::url: https://code.visualstudio.com/sha/download?build=stable&os=linux-x64
-desktop::vscode::sha256: dc0333c196d8f455539b0b27f99d6b4fcffb66dca3f8de0e466b9cbfe19cc869
+desktop::vscode::url: 'https://vscode.download.prss.microsoft.com/dbazure/download/stable/863d2581ecda6849923a2118d93a088b0745d9d6/code-stable-x64-1709910909.tar.gz'
+desktop::vscode::sha256: 'eceecad800c3e3ea193cff87ddf6243a3397b264'
 
-desktop::drawio::drawio: 'v21.2.1'
-desktop::drawio::archive_name: 'drawio-amd64-21.2.1'
-desktop::drawio::sha256: '66ee32baace526728c4ea4c949daa29bfc5a260bf78ed9436401dc84983b9ffb'
+desktop::drawio::drawio: 'v24.0.4'
+desktop::drawio::archive_name: 'drawio-amd64-24.0.4'
+desktop::drawio::sha256: 'ae529d3b9664fc24bd9e90092314e144e3893ecfbb7483bc0951734bc79c6d25'
+
+desktop::discord::url: 'https://discordapp.com/api/download?platform=linux&format=deb'
+desktop::discord::archive_name: 'discord'
+
+desktop::chrome::url: 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+desktop::chrome::archive_name: 'chrome'
+
+dekstop::telegram::url: 'https://telegram.org/dl/desktop/linux'
+desktop::telegram::archive_name: 'telegram'
+desktop::telegram::sh256: '33943e8bb36738807aed761d318536f436bb6bed4e577f35f85a0e288629fa09'
+
+packages::embedded::url: 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi.tar.xz?rev=dccb66bb394240a98b87f0f24e70e87d&hash=B788763BE143D9396B59AA91DBA056B6'
+packages::embedded::sh256: '12a2815644318ebcceaf84beabb665d0924b6e79e21048452c5331a56332b309'
+packages::embedded::archive_name: 'gcc_arm_none_eabi'

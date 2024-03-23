@@ -1,3 +1,5 @@
+# go back to jdk17? more compatibility evtl.
+
 class desktop::openjdk(String $openjdk, String $url, String $sha256) {
   $java_binaries = [
     'java', 'javac', 'javadoc', 'jar', 'jconsole', 'jdb',
