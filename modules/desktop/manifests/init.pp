@@ -20,6 +20,7 @@ class desktop {
 
   include packages::build_deps
   include packages::editors
+  include packages::embedded
   include packages::firefox
   include packages::gnome_terminal
   include packages::latex
