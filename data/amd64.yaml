@@ -5,14 +5,14 @@ desktop::node::sha256: '61632bb78ee828d6e8f42adc0bc2238a6b8200007093988d3927176a
 
 # https://pypy.org/download.html
 desktop::pypy::pypy3: 'pypy3.10-v7.3.15-linux64'
-desktop::pypy::sha256: '6c577993160b6f5ee8cab73cd1a807affcefafe2f7441c87bd926c10505e8731'
+desktop::pypy::sha256: '33c584e9a70a71afd0cb7dd8ba9996720b911b3b8ed0156aea298d4487ad22c3'
 
 desktop::openjdk::openjdk: '17.0.2'
 desktop::openjdk::url: 'https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'
 desktop::openjdk::sha256: '0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'
 
-desktop::vscode::url: 'https://vscode.download.prss.microsoft.com/dbazure/download/stable/863d2581ecda6849923a2118d93a088b0745d9d6/code-stable-x64-1709910909.tar.gz'
-desktop::vscode::sha256: 'eceecad800c3e3ea193cff87ddf6243a3397b264'
+desktop::vscode::url: 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64'
+desktop::vscode::sha256: 'c2e97cdc63ff1bcbfbb10c227b5398623d21f21e487108fa1d740dabe7d37985'
 
 desktop::drawio::drawio: 'v24.0.4'
 desktop::drawio::archive_name: 'drawio-amd64-24.0.4'
@@ -24,9 +24,9 @@ desktop::discord::archive_name: 'discord'
 desktop::chrome::url: 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
 desktop::chrome::archive_name: 'chrome'
 
-dekstop::telegram::url: 'https://telegram.org/dl/desktop/linux'
+desktop::telegram::url: 'https://telegram.org/dl/desktop/linux'
 desktop::telegram::archive_name: 'telegram'
-desktop::telegram::sh256: '33943e8bb36738807aed761d318536f436bb6bed4e577f35f85a0e288629fa09'
+desktop::telegram::sha256: '33943e8bb36738807aed761d318536f436bb6bed4e577f35f85a0e288629fa09'
 
 packages::embedded::url: 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi.tar.xz?rev=dccb66bb394240a98b87f0f24e70e87d&hash=B788763BE143D9396B59AA91DBA056B6'
 packages::embedded::sh256: '12a2815644318ebcceaf84beabb665d0924b6e79e21048452c5331a56332b309'

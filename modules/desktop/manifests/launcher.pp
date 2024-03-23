@@ -24,12 +24,12 @@ class desktop::launcher {
   }
 
   gsetting { 'org.gnome.shell.extensions.dash-to-dock show-trash':
-    enusre => ':false',
+    ensure => ':false',
     user   => 'clasherkasten',
   }
 
   gsetting { 'org.gnome.shell.extensions.dash-to-dock autohide':
-    enusre => ':true',
+    ensure => ':true',
     user   => 'clasherkasten',
   }
 

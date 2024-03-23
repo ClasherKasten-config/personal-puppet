@@ -20,7 +20,7 @@ class desktop::dotfiles {
     ensure   => 'present',
     user     => 'clasherkasten',
     provider => 'git',
-    source   => 'git@github.com:ClasherKasten-config/scratch',
+    source   => 'https://github.com/ClasherKasten-config/scratch',
   }
 
   $dotfiles.each |$f| {
