@@ -19,7 +19,7 @@ class packages::embedded(String $url, String $sha256, String $archive_name, Stri
     extract       => true,
     extract_flags => '--strip-components=1 -xf',
     extract_path  => '/home/clasherkasten/opt/gcc-arm-none-eabi',
-    creates       => '/home/clasherkasten/opt/gcc-arm-none-eabi/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi/bin/',
+    creates       => '/home/clasherkasten/opt/gcc-arm-none-eabi/bin',
     user          => 'clasherkasten',
     group         => 'clasherkasten',
     require       => Package['curl'],
@@ -38,27 +38,25 @@ class packages::embedded(String $url, String $sha256, String $archive_name, Stri
     extract       => true,
     extract_flags => '--strip-components=1 -xf',
     extract_path  => '/home/clasherkasten/opt/openocd',
-    creates       => '/home/clasherkasten/opt/openocd/xpack-openocd-0.12.0-2/bin/',
+    creates       => '/home/clasherkasten/opt/openocd/bin',
     user          => 'clasherkasten',
     group         => 'clasherkasten',
     require       => Package['curl'],
   }
 
   $gcc_executables.each |$f| {
-    file { "/home/clasherkasten/bin/${f}":
-      ensure  => 'link',
-      target  => "/home/clasherkasten/opt/gcc-arm-none-eabi/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi/bin/${f}",
-      owner   => 'clasherkasten',
-      group   => 'clasherkasten',
-      require => File['/home/clasherkasten/opt/gcc-arm-none-eabi/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi/bin/'],
+    file { "/home/clasherkasten/test-bin/arm-none-eabi-${f}":
+      ensure => 'link',
+      target => "/home/clasherkasten/opt/gcc-arm-none-eabi/bin/arm-none-eabi-${f}",
+      owner  => 'clasherkasten',
+      group  => 'clasherkasten',
     }
   }
 
-  file { '/home/clasherkasten/bin/openocd':
-    ensure  => 'link',
-    target  => '/home/clasherkasten/opt/openocd/xpack-openocd-0.12.0-2/bin/openocd',
-    owner   => 'clasherkasten',
-    group   => 'clasherkasten',
-    require => File['/home/clasherkasten/opt/openocd/xpack-openocd-0.12.0-2/bin/'],
+  file { '/home/clasherkasten/test-bin/openocd':
+    ensure => 'link',
+    target => '/home/clasherkasten/opt/openocd/bin/openocd',
+    owner  => 'clasherkasten',
+    group  => 'clasherkasten',
   }
 }
