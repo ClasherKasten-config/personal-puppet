@@ -12,7 +12,7 @@ desktop::openjdk::url: 'https://download.java.net/java/GA/jdk17.0.2/dfd4a8d09857
 desktop::openjdk::sha256: '0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'
 
 desktop::vscode::url: 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64'
-desktop::vscode::sha256: 'c2e97cdc63ff1bcbfbb10c227b5398623d21f21e487108fa1d740dabe7d37985'
+desktop::vscode::sha256: 'bc60d8e7bc4cb8426b989070434b9f9c02add46475ea31032ade7f7ef6bdc143'
 
 desktop::drawio::drawio: 'v24.0.4'
 desktop::drawio::archive_name: 'drawio-amd64-24.0.4'
@@ -26,7 +26,7 @@ desktop::chrome::archive_name: 'chrome'
 
 desktop::telegram::url: 'https://telegram.org/dl/desktop/linux'
 desktop::telegram::archive_name: 'telegram'
-desktop::telegram::sha256: '33943e8bb36738807aed761d318536f436bb6bed4e577f35f85a0e288629fa09'
+desktop::telegram::sha256: '8e59b49e94ed83aed1a4ac3b482ce878d9887649b648cf08427d30a9064be845'
 
 packages::embedded::url: 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi.tar.xz?rev=dccb66bb394240a98b87f0f24e70e87d&hash=B788763BE143D9396B59AA91DBA056B6'
 packages::embedded::sha256: '12a2815644318ebcceaf84beabb665d0924b6e79e21048452c5331a56332b309'

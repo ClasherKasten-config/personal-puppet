@@ -45,7 +45,7 @@ class packages::embedded(String $url, String $sha256, String $archive_name, Stri
   }
 
   $gcc_executables.each |$f| {
-    file { "/home/clasherkasten/test-bin/arm-none-eabi-${f}":
+    file { "/home/clasherkasten/bin/arm-none-eabi-${f}":
       ensure => 'link',
       target => "/home/clasherkasten/opt/gcc-arm-none-eabi/bin/arm-none-eabi-${f}",
       owner  => 'clasherkasten',
@@ -53,7 +53,7 @@ class packages::embedded(String $url, String $sha256, String $archive_name, Stri
     }
   }
 
-  file { '/home/clasherkasten/test-bin/openocd':
+  file { '/home/clasherkasten/bin/openocd':
     ensure => 'link',
     target => '/home/clasherkasten/opt/openocd/bin/openocd',
     owner  => 'clasherkasten',
